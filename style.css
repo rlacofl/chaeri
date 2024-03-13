@@ -1,14 +1,42 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 @font-face {
   font-family: "PartialSansKR-Regular";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/PartialSansKR-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "TTWanjudaedunsancheB";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/TTWanjudaedunsancheB.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+.notosanskr * {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+@font-face {
+  font-family: "SUIT-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+.nanumgothic * {
+  font-family: "Nanum Gothic", sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  position: relative;
+  font-family: "Pretendard-Regular";
 }
 
 div {
@@ -21,15 +49,54 @@ div {
 
 .header {
   height: 500px;
+  width: 100%;
 }
 
 .header-top {
-  background-color: #9BABB8;
   height: 80px;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 1%;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  z-index: 9999;
+}
+
+.logo {
+  position: fixed;
+  display: flex;
+  font-size: 2.12rem;
+  font-family: "TTWanjudaedunsancheB";
+  text-decoration: none;
+  color: black;
+}
+
+.topbar {
+  position: fixed;
+  display: flex;
+  top: 10px;
+  right: 18px;
+  margin-right: 0;
+  color: black;
+}
+
+.topbar a {
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+  font-weight: 700;
+  margin-right: 18px;
+}
+
+.topbar a i {
+  margin-left: 8px;
+  top: 2px;
 }
 
 .header-nav {
-  background-color: #EEE3CB;
   height: 420px;
 }
 
@@ -41,6 +108,29 @@ div {
 .b-container {
   background-color: #ACB1D6;
   height: 150px;
+}
+
+.b-container h2 {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+  padding-bottom: 0;
+}
+
+.b-container a svg {
+  width: 400px;
+  justify-content: center;
+  display: flex;
+  margin: auto;
+  padding: auto;
+}
+
+.b-container h4 {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  padding: 0;
 }
 
 .contents {
