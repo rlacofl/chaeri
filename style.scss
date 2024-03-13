@@ -1,0 +1,82 @@
+$primary: #B5C0D0;
+
+@font-face { // 파셜산스
+  font-family: 'PartialSansKR-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/PartialSansKR-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal; }
+
+* {
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+// 나중에 html font-size 정해서 rem 영향 주기 (em 고려만)
+// 경계선은 색깔이나 보더박스로 주기
+
+div { // 글자색
+  // body 아님 주의 ;;
+  color: black;
+}
+
+
+.wrap {
+  background-color: $primary;
+}
+
+// 이거 반응형하는 곳에 넣기 넣기 (고민좀해보기_
+// .container {        // 안 쪽 
+//   width: 1200px;    // 크기
+//   margin: 0 auto;   // 양쪽 맞춰줌
+//   height: inherit;  // 일단 차이 없음
+//   background: rgba(255,255,255,0.3);  }
+
+
+// header start
+.header{
+  height: 500px;
+  
+}
+
+.header-top {
+  background-color: #9BABB8;
+  height: 80px;
+}
+.header-nav {
+  background-color: #EEE3CB;
+  height: 420px;
+}
+
+// banner start
+.banner {
+  background-color: #8294C4;
+  height: 150px;
+}
+.b-container {
+  background-color: #ACB1D6;
+  height: 150px;
+}
+
+// contents start
+.contents {
+  background-color: #D7C0AE;
+  height: 850px;
+}
+
+.content1 {
+  background-color: #EED3D9;
+  height: 350px;
+}
+.content2{
+  background-color: #F5E8DD;
+  height: 500px;
+}
+
+// footer start
+.footer {
+  background-color: #607274;
+  height: 150px;
+
+}

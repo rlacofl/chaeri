@@ -1,0 +1,64 @@
+@font-face {
+  font-family: "PartialSansKR-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/PartialSansKR-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+div {
+  color: black;
+}
+
+.wrap {
+  background-color: #B5C0D0;
+}
+
+.header {
+  height: 500px;
+}
+
+.header-top {
+  background-color: #9BABB8;
+  height: 80px;
+}
+
+.header-nav {
+  background-color: #EEE3CB;
+  height: 420px;
+}
+
+.banner {
+  background-color: #8294C4;
+  height: 150px;
+}
+
+.b-container {
+  background-color: #ACB1D6;
+  height: 150px;
+}
+
+.contents {
+  background-color: #D7C0AE;
+  height: 850px;
+}
+
+.content1 {
+  background-color: #EED3D9;
+  height: 350px;
+}
+
+.content2 {
+  background-color: #F5E8DD;
+  height: 500px;
+}
+
+.footer {
+  background-color: #607274;
+  height: 150px;
+}/*# sourceMappingURL=style.css.map */
