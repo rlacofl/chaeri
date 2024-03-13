@@ -3,13 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="style.css">
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <title>WEBSTANDARD SITE</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/asset/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/asset/favicons/favicon-32x32.png">
+  <link rel="manifest" href="/asset/favicons/site.webmanifest">
+  <link rel="mask-icon" href="/asset/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/png" sizes="16x16" href="/asset/favicons/favicon-16x16.png">
+
+  <!-- swiper -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
 </head>
 <body>
   <section class="wrap">
     <div class="header">
+      <div class="container">
 
         <div class="header-top">
           <div class="container">
@@ -20,48 +36,127 @@
             <a href="#">ARTIST</a>
             <a href="#">SHOP</a>
             <a href="#">MAGAZINE</a>
-            <a href="#"> <i class='bx bx-search-alt'> </i></a>
+            <a href="#"> <i class='bx bx-search-alt'></i></a>
             <a href="#"> <i class='bx bxs-user'></i></a>
             </nav>
-
           </div>
         </div>
+      </div>
+    </div>
 
           <div class="header-nav">
             <div class="container">
-              <!-- <img src="asset/kep.png" alt="promotion"> -->
+              <img src="asset/kep.png" alt="promotion">
             </div>
           </div>
-    </div>
+
   <!-- header -->
 
 
     <div class="banner">
       <div class="container">
         <div class="b-container">
-
           <h2>지역별 전시 현황</h2>
             <a href="#">
               <svg class="under-icon" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter">
                 <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
             </a>
-          <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-            Placeat, adipisci vitae. Nam quae harum quo necessitatibus sint.
-          </h4>
 
+            <div class="container">
+              <ul class="filter">
+                <li><input type="checkbox" id="checkboxOne" value="Rainbow Dash"><label for="checkboxOne">전체</label></li>
+                <li><input type="checkbox" id="checkboxTwo" value="Cotton Candy" checked><label for="checkboxTwo">온라인</label></li>
+                <li><input type="checkbox" id="checkboxThree" value="Rarity" checked><label for="checkboxThree">서울</label></li>
+                <li><input type="checkbox" id="checkboxFour" value="Moondancer"><label for="checkboxFour">경기</label></li>
+                <li><input type="checkbox" id="checkboxFive" value="Surprise"><label for="checkboxFive">경남</label></li>
+                <li><input type="checkbox" id="checkboxSix" value="Twilight Sparkle" checked><label for="checkboxSix">부산</label></li>
+                <li><input type="checkbox" id="checkboxSeven" value="Fluttershy"><label for="checkboxSeven">경북</label></li>
+                <li><input type="checkbox" id="checkboxEight" value="Derpy Hooves"><label for="checkboxEight">전남</label></li>
+                <li><input type="checkbox" id="checkboxNine" value="Princess Celestia"><label for="checkboxNine">전북</label></li>
+                <li><input type="checkbox" id="checkboxTen" value="Gusty"><label for="checkboxTen">강원</label></li>
+                <li><input type="checkbox" id="checkboxElev" value="What"><label for="checkboxElev">제주</label></li>
+                
+                <!-- <li class="filter1"><input type="checkbox" id="checkboxEleven" value="Discord"><label for="checkboxEleven">Discord</label></li>
+                <li><input type="checkbox" id="checkboxTwelve" value="Clover"><label for="checkboxTwelve">Clover</label></li>
+                <li><input type="checkbox" id="checkboxThirteen" value="Baby Moondancer"><label for="checkboxThirteen">Baby Moondancer</label></li>
+                <li><input type="checkbox" id="checkboxFourteen" value="Medley"><label for="checkboxFourteen">Medley</label></li>
+                <li><input type="checkbox" id="checkboxFifteen" value="Firefly"><label for="checkboxFifteen">Firefly</label></li> -->
+              </ul>
+              <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                Placeat, adipisci vitae. Nam quae harum quo necessitatibus sint.
+              </h4>
+            </div>
         </div>
       </div>
     </div>
   <!-- banner -->
 
+
+  <!-- CONTENTS START -->
+
     <div class="contents">
       <div class="content1">
-        <div class="container">content1</div>
+        <div class="container">
+
+          <!-- Slider main container -->
+            <div class="swiper">
+              <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+
+                  <!-- Slides -->
+                  <div class="swiper-slide">
+                    <a href="#" target="_self">
+                      <div class="text-wrap">
+                        <h2> 냥냥이 산책시간 <br>By Max Asabin</h2>
+                          <p>포토샵 강좌 실전</p>
+                        </div> <!-- text-wrap -->
+                      <img src="/asset/img-01.jpg" alt="1">
+                    </a>
+                  </div>     <!-- swiper-slide -->
+
+                  <!-- Slides -->
+                  <div class="swiper-slide">
+                    <a href="#" target="_self">
+                      <div class="text-wrap">
+                        <h2> 냥냥이 맛있는 점심타임 <br>By Max Asabin</h2>
+                          <p>포토샵 강좌 실전</p>
+                        </div> <!-- text-wrap -->
+                      <img src="/asset/img-02.jpg" alt="2">
+                    </a>
+                  </div>     <!-- swiper-slide -->
+
+                  <!-- Slides -->
+                  <div class="swiper-slide">
+                    <a href="#" target="_self">
+                      <div class="text-wrap">
+                        <h2> 냥냥이 낮잠 잘 시간 <br>By Max Asabin</h2>
+                          <p>포토샵 강좌 실전</p>
+                        </div> <!-- text-wrap -->
+                      <img src="/asset/img-03.jpg" alt="3">
+                    </a>
+                  </div>     <!-- swiper-slide -->
+                </div>       <!-- swiper-wrapper -->
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+            </div>           <!-- swiper -->    
+        </div>               <!-- container -->
+			</div>                 <!-- content1 -->
+
+
+            <!-- If we need pagination -->
+            <!-- <div class="swiper-pagination"></div> -->
+            <!-- If we need navigation buttons -->
+        </div>
       </div>
+
 
       <div class="content2">
         <div class="container">content2</div>
       </div>
+
+
 
     </div>
   <!-- contents -->
@@ -73,6 +168,7 @@
   <!-- footer -->
   </section>
 
+	<script src="script.js"></script>
 </body>
 
 </html>

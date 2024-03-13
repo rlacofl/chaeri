@@ -1,4 +1,9 @@
 $primary: #B5C0D0;
+$header_h: 800px;
+$banner_h: 200px;
+$content1_h: 800px;
+$content2_h: 600px;
+$footer_h: 150px;
 
 @font-face { // 파셜산스
   font-family: 'PartialSansKR-Regular';
@@ -31,111 +36,106 @@ $primary: #B5C0D0;
   font-family: 'Nanum Gothic', sans-serif;
   }
 
-
+// 나중에 html font-size 정해서 rem 영향 주기 (em 고려만)
+// 경계선은 color나 border solid로 주기
 
 * {
   margin: 0; 
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Pretendard-Regular';
+  // box-sizing: border-box;
+  font-family: 'Pretendard-Regular'
 }
 
-// 나중에 html font-size 정해서 rem 영향 주기 (em 고려만)
-// 경계선은 color나 border solid로 주기
-
-div { // 글자색
-  // body 아님 주의 ;;
-  color: black;
-}
+// body {  // wrap은 body 전체의 section
+//     // background-color: $primary;
+//   background: linear-gradient(to right top, #F7FFE5, #AAD7D9 30%, #FFEBD8, #DFCCFB,  #E6A4B4);
+//   }
 
 
-.wrap {
-  background-color: $primary;
-  // display: flex;
-  // min-width: 468px;
-  // position: static;
-  // 공부해 !!!!!!!!!!!!!!!!!!!!
-}
-
-// 이거 반응형하는 곳에 넣기 넣기 (고민좀해보기_
-// .container {        // 안 쪽 
-//   width: 1200px;    // 크기
-//   margin: 0 auto;   // 양쪽 맞춰줌
-//   height: inherit;  // 일단 차이 없음
-//   background: rgba(255,255,255,0.3);  }
-
-
-// height 뼈대 완벽하게 잡은 다음에 부모 애들 background-color 다 빼기
-// HTML 16px = 1rem
+.container {        // 안 쪽 
+  width: 1500px;   
+  margin: 0 auto;   // 양쪽 맞춰줌
+  height: inherit;  // 무조건 있어야해 세로 양 끝에 폭 넣어주는 거
+  background: rgba(255,255,255,0.3); 
+  }
 
 
 // header start
 .header{
-  height: 500px;
+  height: $header_h;
   width: 100%;
 }
 
 .header-top {
-  // background-color: #9BABB8;
-  height: 80px;
+  background-color: #9BABB8;
   position: relative;
   top: 0;
   left: 0;
   width: 100%;
   padding: 5px 1%;
-  background-color: transparent; 
+  // background-color: transparent; 
   display: flex;
-  justify-content: space-between; // 세로
-  z-index: 9999;  
+  justify-content: space-between;  
+  z-index: 2;  
   }
 
 // header-top 애기들
 .logo {
   position: fixed;
-  display: flex;
   font-size: 2.12rem;
   font-family: 'TTWanjudaedunsancheB';
   text-decoration: none;
   color: black;
   }
 
-.topbar {
+.topbar {  // 메뉴
   position: fixed;
+  top: 0;
+  right: 0;
+
+  padding: 1rem;
   display: flex;
-  top: 10px;
-  right: 18px;
-  margin-right: 0;
+  justify-content: center;
+  align-items: center;
   color: black;
 }
 
-.topbar a {
+.topbar a { // 메뉴 아가들
   font-size: 16px;
+  text-align: center;
   color: black;
   text-decoration: none;
   font-weight: 700;
   margin-right: 18px;
+  display: flex;
+  position: relative;
 }
 
-.topbar a i {
+.topbar i { // 메뉴 아이콘들
+  position: relative;  // static이 아닌 애여야지 top이 적용됨
   margin-left: 8px;
-  top: 2px;
+  top: 1px;
 }
+
 // header-top 애기들 끝
+
+
 
 // header-nav start
 .header-nav {
-  // background-color: #EEE3CB;
-  height: 420px;
+  display: flex;
 }
 
-// .container img {
-//   width: 900px;
-//   height: 440px;
+.header-nav .container img {
+  position: absolute;
+  top: 120px;
+  width: 1500px;
+  height: 600px;
 
-//   display: flex;
-//   justify-content: center;
-//   // margin: auto;
-// }
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
 
 
 // header end
@@ -143,18 +143,24 @@ div { // 글자색
 
 // banner start
 .banner {
-  background-color: #8294C4;
-  height: 150px;
+  height: $banner_h;
+  background-color: #ACB1D6;
+}
+
+.banner .container {
+  background-color: #979ecc;
 }
 
 .b-container {
-  background-color: #ACB1D6;
-  height: 150px;
+  height: $banner_h;
+  position: static;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 16px;
 }
 
 .b-container h2 {
   font-size: 25px;
-  display: flex;
+  display: grid;
   justify-content: center;
   padding-top: 6px;
   padding-bottom: 0;
@@ -168,31 +174,233 @@ div { // 글자색
   padding: auto;  // 크기
 }
 
-// .b-container a svg:hover {}
-// 이거 뭐할지 고민해보기 !!
-// 그리고 sug 저거 애니메이션 넣기 - 아래위로 움직이는 모션
+.under-icon {   // 밑 화살표 아이콘 애니메이션 적용
+  opacity: 0;
+  animation: underIconMove 2s ease-in 0.2s infinite alternate;
+  // animation-name: underIconMove;
+  // animation-duration: 1.6s;
+  // animation-delay: 0.3s;
+  // animation-iteration-count: infinite;
+  // animation-direction: alternate;
+  // animation-fill-mode: forwards;
+}
+
+ul.filter {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+
+}
+
+ul.filter li {
+display: inline-block;
+}
+
+ul.filter li label{
+  display: inline-block;
+  background-color: #ACB1D6;
+  border: 2px solid #9BB8CD;
+  color: #000000;
+  border-radius: 25px;
+  white-space: nowrap;
+  margin: 3px 0px;
+  user-select: none;
+  transition: all .2s;
+
+  padding: 8px 20px;
+  margin-right: 10px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+ul.filter li label::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-weight: 900;
+  font-size: 12px;
+  padding: 2px 6px 2px 2px;
+  content: "\f067";
+  transition: transform .3s ease-in-out;
+}
+
+ul.filter li input[type="checkbox"]:checked + label::before {
+    content: "\f00c";
+    transform: rotate(-360deg);
+    transition: transform .3s ease-in-out;
+}
+
+ul.filter li input[type="checkbox"]:checked + label {
+    border: 2px solid #9BB8CD;
+    background-color: #8EACCD;
+    color: #000000;
+    transition: all .2s;
+}
+
+ul.filter li input[type="checkbox"] {
+  display: absolute;
+}
+
+ul.filter li input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+
+ul.filter li input[type="checkbox"]:focus + label {
+  border: 2px solid black;
+}
 
 .b-container h4 {
+  text-align: center;
   font-size: 14px;
-  display: flex;
-  justify-content: center;
-  padding: 0;
+  padding: auto;
 }
 
 
 // contents start
-.contents {
-  background-color: #D7C0AE;
-  height: 850px;
+// .contents {
+//   // background-color: #D7C0AE;
+//   // height: 1400px;
+// }
+
+
+ // swiper 사용 복잡하니까 주의해서 코드 작성하자 !
+.content1 {   
+  // background-color: #EED3D9;
+  height: $content1_h;
 }
 
-.content1 {
-  background-color: #EED3D9;
-  height: 350px;
+.content1 img {
+  display: block;
+  width: 100%;
+  height: $content1_h;
+  position: static;   // 엥 이거 하니까 텍스트 완벽해짐 왜지 ??
 }
-.content2{
+
+.content1 .container {
+	position: relative;
+	width: 100%;
+	// max-width: 1080px;
+  margin: auto;  // 굿 ㅎㅎ
+	// padding: 30px 20px;
+}
+
+.swiper-slide {
+	width: 100%;
+	/* height: 800px; */
+	// background-color: #eee;
+}
+
+.swiper-slide-active .text-wrap {
+	top: 30%;
+	opacity: 1;
+	transition: 0.3s;
+}
+
+.text-wrap {
+	position: absolute;
+	top: 50%; // 움직이는 모션 
+
+	left: 0;
+	right: 0;
+	width: 450px;
+	opacity: 0;
+	margin: auto;
+	text-align: center;
+	transition: 0.5s;
+}
+
+.text-wrap h2 {
+	color: #fff;
+	font-size: 48px;
+	line-height: 1.25;
+	font-weight: bold;
+	margin-bottom: 16px;
+}
+
+.text-wrap p {
+	color: #fff;
+	font-size: 20px;
+}
+
+.swiper-pagination-bullet {
+	width: 400px; 
+	height: 3px;
+	border-radius: 0;
+	background-color: #fff;
+}
+
+.swiper-pagination-bullet-active {
+	background: #fff;
+	width: 80px;
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+	opacity: 0;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+	width: 40px;
+	height: 40px;
+	background-color: rgba(0, 0, 0, 0.904);
+	backdrop-filter: blur(3px);
+	background-size: 18px;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 2;
+	// border-radius: 50%;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+	position: absolute;
+
+	/* top: 80px; */
+}
+
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after,
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+	display: none;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+	background-color: #004fff;
+	box-shadow: 0 4px 12px rgba(0, 79, 255, 0.4);
+}
+
+
+.swiper-button-prev {
+	background-image: url(asset/svg/icon-arrow-left.svg);
+	left: 20px;
+}
+
+.swiper-button-prev:hover {
+	background-image: url(asset/svg/icon-arrow-left-w.svg);
+}
+
+.swiper-button-next {
+	background-image: url(asset/svg/icon-arrow-right.svg);
+	right: 20px;
+}
+
+.swiper-button-next:hover {
+	background-image: url(asset/svg/icon-arrow-right-w.svg);
+
+}
+// content1 (swiper) 끝
+
+
+
+
+
+
+// content2
+.content2 {  
   background-color: #F5E8DD;
-  height: 500px;
+  height: 800px;
 }
 
 
@@ -200,4 +408,32 @@ div { // 글자색
 .footer {
   background-color: #607274;
   height: 150px;
+}
+
+
+
+
+
+// ANIMATION / TRANSITION
+
+@keyframes underIconMove {
+  0% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+
+  40% {
+    opacity: 0.6;
+    transform: translateY(1.5px);
+  }
+
+  80% {
+    opacity: 0.8;
+    transform: translateY(4px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
