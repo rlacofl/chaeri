@@ -264,9 +264,6 @@ ul.filter {
   list-style: none;
   justify-content: center;
   align-items: center;
-
-  
-
 }
 
 ul.filter li {
@@ -336,26 +333,20 @@ ul.filter li input[type="checkbox"]:focus + label {
 
 
 // contents start
-// .contents {
-//   // background-color: #D7C0AE;
-//   // height: 1400px;
-// }
 
-
- // swiper 사용 복잡하니까 주의해서 코드 작성하자 !
 .content1 {   
   // background-color: #EED3D9;
   height: $content1_h;
 }
 
 .content1 img {
-  display: flex;
+  // display: flex;
   width: 100%;
   height: $content1_h;
   position: static;   // 엥 이거 하니까 텍스트 완벽해짐 왜지 ?? // 안 해도 됨 ..
-  justify-content: right;
-  flex-direction: row;
-  position: relative;
+  // justify-content: right;
+  // flex-direction: row;
+  // position: relative;
   z-index: -1;
 }
 
@@ -663,11 +654,11 @@ ul.filter li input[type="checkbox"]:focus + label {
 // }
 
 @media screen and (max-width: 1500px) {  //~1500
-  .content1 img {
-    height: 1100px;
-    position: relative;
-    left: 30%;
-  }
+  // .content1 img {
+  //   height: 1100px;
+  //   position: relative;
+  //   left: 30%;
+  // }
 
   .sidebar {
     display: none;
