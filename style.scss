@@ -352,9 +352,9 @@ ul.filter li input[type="checkbox"]:focus + label {
   display: flex;
   width: 100%;
   height: $content1_h;
-  // position: static;   // 엥 이거 하니까 텍스트 완벽해짐 왜지 ?? // 안 해도 됨 ..
+  position: static;   // 엥 이거 하니까 텍스트 완벽해짐 왜지 ?? // 안 해도 됨 ..
   justify-content: right;
-  flex-direction: column;
+  flex-direction: row;
   position: relative;
   z-index: -1;
 }
