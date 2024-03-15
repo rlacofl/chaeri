@@ -288,12 +288,12 @@ ul.filter li input[type=checkbox]:focus + label {
 }
 
 .content1 {
-  height: 900px;
+  height: 600px;
 }
 
 .content1 img {
   width: 100%;
-  height: 900px;
+  height: 600px;
   position: static;
   z-index: -1;
 }
@@ -377,7 +377,6 @@ ul.filter li input[type=checkbox]:focus + label {
   z-index: 2;
   transition: 0.4s;
   position: absolute;
-  /* top: 80px; */
 }
 
 .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after,

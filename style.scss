@@ -2,7 +2,7 @@ $primary: #B5C0D0;
 $header_h: 800px;
 $banner_h: 250px;
 $content_h: 800px;
-$content1_h: 900px;
+$content1_h: 600px;
 $content2_h: 600px;
 $footer_h: 200px;
 
@@ -342,7 +342,7 @@ ul.filter li input[type="checkbox"]:focus + label {
 .content1 img {
   // display: flex;
   width: 100%;
-  height: $content1_h;
+  height: 600px;
   position: static;   // 엥 이거 하니까 텍스트 완벽해짐 왜지 ?? // 안 해도 됨 ..
   // justify-content: right;
   // flex-direction: row;
@@ -434,8 +434,6 @@ ul.filter li input[type="checkbox"]:focus + label {
 	-webkit-transition: 0.4s;
 	transition: 0.4s;
 	position: absolute;
-
-	/* top: 80px; */
 }
 
 .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after,
