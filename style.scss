@@ -44,20 +44,26 @@ $footer_h: 200px;
   margin: 0; 
   padding: 0;
   // box-sizing: border-box;
-  font-family: 'Pretendard-Regular'
+  font-size: 24px;
+  font-family: 'Pretendard-Regular', 'Noto Sans KR', sans-serif , 'Nanum Gothic', sans-serif;
 }
 
 body {  // wrap은 body 전체의 section
     // background-color: $primary;
   background: linear-gradient(to right top, #F7FFE5, #AAD7D9 30%, #FFEBD8, #DFCCFB, #E6A4B4);
+  min-width: 450px;
 }
 
 
 .container {        // 전체 안 쪽 (컨테이너)
-  width: 1500px;    // 안 쪽 영역 크기
+  // width: 1500px;    // 안 쪽 영역 크기
   margin: 0 auto;   // 양쪽 맞춰줌
   height: inherit;  // 무조건 있어야해 세로 양 끝에 폭 넣어주는 거
-  // background: rgba(255,255,255,0.3); 
+
+  // display: flex;
+  // position: relative;
+  // flex-direction: column;
+  // justify-content: center;
   }
 
 .header .container {
@@ -85,15 +91,16 @@ body {  // wrap은 body 전체의 section
 // header-top 애기들
 .logo {
   position: relative;
-  font-size: 2.12rem;
-  font-family: 'TTWanjudaedunsancheB';
+  top: 0;
+  font-size: 1.3rem;
+  font-family: 'TTWanjudaedunsancheB', 'Noto Sans KR', sans-serif;
   text-decoration: none;
   color: black;
   }
 
 .topbar {  // 메뉴
   position: relative;
-  top: -40px;
+  top: -50px;
   left: 0;
   right: 0;
 
@@ -128,48 +135,80 @@ body {  // wrap은 body 전체의 section
   // display: absolute;
 }
 
-.sidebar {
+.sidebar {   // 얘 위치 이상함 ...근데 문제 없긴 함
   float: right;   //고정
   position: relative;   //고정
+  height: 300px;
+}
+
+.home {
+  z-index: 3;
+  position: relative;
+  top: -606px;
+  left: -12px;
 }
 
 .sidebar .box {
+  overflow: hidden;
   background-color: #B5C0D0;
-  width: 360px;
+  width: 280px;
   height: 700px;
   position: relative;
   top: 90px;
+  right: 20px;
 }
 
 .sidebar svg {
   z-index: 3;
   position: relative;
-  top: -606px;
-  left: 6px;
-}
-
-.text {
-  font-size: 24px;
-  position: relative;
   top: -600px;
-  left: 42px;
+  left: -18px;
 }
 
-.header-nav .container img { // 메인 사진
+.text {  // 음 ?
+  font-size: 16px;
+  position: relative;
+  top: -604px;
+  left: -12px;
+}
+
+.sidebar ul li {
+  font-size: 18px;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 3px;
+  word-spacing: 5px;
+}
+
+
+
+.header-nav .container {
+  text-align: center;
+}
+
+
+.Mediamain { // 메인 사진
   position: absolute;
   top: 90px;
-  width: 1110px;
+  left: 60px;
+  width: 1220px;
   height: 700px;
-  z-index: -1;
+  // z-index: -1;
 
   display: flex;
   justify-content: center;
-  margin: auto;
+  // margin: auto;
+
+	right: 24%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
+.mediaMain {
+  height: 80%;
+  display: none;
 
-// 나중에 flex-direction: column; 하기 >> 세로정렬
-
+}
 
 // banner start
 .banner {
@@ -177,15 +216,14 @@ body {  // wrap은 body 전체의 section
   // background-color: #ACB1D6;
 }
 
-// .banner .container {
-//   // background-color: #979ecc;
-// }
-
 .b-container {
   height: $banner_h;
+  display: felx;
   position: static;
   font-family: 'Noto Sans KR', sans-serif;
   font-size: 16px;
+  justify-content: center;
+  align-items: center;
 }
 
 .b-container h2 {
@@ -215,12 +253,19 @@ body {  // wrap은 body 전체의 section
   // animation-fill-mode: forwards;
 }
 
+.main-container {
+  position: relative;
+  
+}
+
 ul.filter {
   animation: underIconMove 2s ease-in 0.2s alternate;
   display: flex;
   list-style: none;
   justify-content: center;
   align-items: center;
+
+  
 
 }
 
@@ -234,14 +279,14 @@ ul.filter li label{
   border: 2px solid #9BB8CD;
   color: #000000;
   border-radius: 25px;
-  white-space: nowrap;
+  // white-space: nowrap;
   margin: 3px 0px;
   user-select: none;
   transition: all .2s;
 
   padding: 8px 20px;
   margin-right: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 26px;
   cursor: pointer;
 }
 
@@ -304,10 +349,14 @@ ul.filter li input[type="checkbox"]:focus + label {
 }
 
 .content1 img {
-  display: block;
+  display: flex;
   width: 100%;
   height: $content1_h;
-  position: static;   // 엥 이거 하니까 텍스트 완벽해짐 왜지 ??
+  // position: static;   // 엥 이거 하니까 텍스트 완벽해짐 왜지 ?? // 안 해도 됨 ..
+  justify-content: right;
+  flex-direction: column;
+  position: relative;
+  z-index: -1;
 }
 
 .content1 .container {
@@ -439,11 +488,14 @@ ul.filter li input[type="checkbox"]:focus + label {
 }
 
 .cards {    // 딱 기본적인 [가운데 정렬 . .]의 틀
-  max-width: 1400px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 60px;
+  max-width: 1800px; // 이거 고치기
   
+  margin: 0 auto;
+  
+  text-align: center;
+  padding: 40px;
+  height: 90%;
+  margin-top: 2%;
 }
 
 .preview {
@@ -456,9 +508,11 @@ ul.filter li input[type="checkbox"]:focus + label {
 
 .prev {
   display: flex;
+
+  width: 100%;
   flex-wrap: wrap;
   flex: 1;
-  margin: 20px;
+  margin: 15px;
   padding: 20px;
   border: 2px solid black;
   border-radius: 4px;
@@ -466,7 +520,7 @@ ul.filter li input[type="checkbox"]:focus + label {
 }
 
 .prev .fab {
-  width: 30%;
+  width: 50%;
   font-size: 70px;
   margin: 16px 0;
 }
@@ -488,34 +542,27 @@ ul.filter li input[type="checkbox"]:focus + label {
   border-color: #427D9D;
   background: #427D9D;
 }
-
 .prev-1:hover a {
   color: #427D9D;
 }
-
 .prev-2:hover {
   border-color: #427D9D;
   background: #427D9D;
 }
-
 .prev-2:hover a {
   color: #427D9D;
 }
-
 .prev-3:hover {
   border-color: #427D9D;
   background: #427D9D;
 }
-
 .prev-3:hover a {
   color: #427D9D;
 }
-
 .prev-4:hover {
   border-color: #427D9D;
   background: #427D9D;
 }
-
 .prev-4:hover a {
   color: #427D9D;
 }
@@ -548,17 +595,13 @@ ul.filter li input[type="checkbox"]:focus + label {
   border-radius: 4px;
 }
 
-@media (max-width: 900px) {
-  .preview {
-    display: flex;
-    flex-direction: column;
-  }
-}
 // content2 끝 !!!!!!!!!!!!!!
 
 
 // footer start
 .footer {
+  // position: relative;
+  display: block;
   background-color: #191717;
 }
 
@@ -566,18 +609,20 @@ ul.filter li input[type="checkbox"]:focus + label {
   position: relative;
   justify-content: center;
 
-  margin: 0 auto;
+  // margin: 0 auto;
   text-align: center;
   padding: 35px;
 }
 
 .footer .container h4 {
+  font-size: 16px;
   font-family: 'Pretendard-Regular';
   font-weight: 200;
   color: #F1EFEF;
 }
 
 .footer .container p {
+  font-size: 14px;
   font-family: 'Pretendard-Regular';
   font-weight: 100;
   color: #9E9FA5;
@@ -585,7 +630,6 @@ ul.filter li input[type="checkbox"]:focus + label {
 
 
 // ANIMATION / TRANSITION
-
 @keyframes underIconMove {
   0% {
     opacity: 0;
@@ -609,51 +653,235 @@ ul.filter li input[type="checkbox"]:focus + label {
 }
 
 
-// 반응형 제작
 
-// 반응형을 위해서 사용하는 CSS 기능에는 media가 있음 (@ 붙여서 사용)
-// screen의 사이즈를 지정할 때엔 @media screen and 하고 ()에 max-width 또는 min-width를 통해서 조정함
-// 일반적으로 데스크톱의 max-width, device-width는 1024px로 지정하기 마련.
 
-// @media screen and (max-width: 1024px) {
-//   // 데스크톱
-//   .contents p {
-//     font-size: 1.4rem; 
-//   }
+
+// 반응형
+
+// @media screen and (min-width: 1500px) {  //1500~
+
 // }
 
-@media (max-width: 900px) {
-  .preview {
+@media screen and (max-width: 1500px) {  //~1500
+  .content1 img {
+    height: 1100px;
+    position: relative;
+    left: 30%;
+  }
+
+  .sidebar {
+    display: none;
+    float: right;
+  }
+
+  .content2 {
+    height: 500px;
+    padding-top: 200px;
+    padding-bottom: 100px;
+  }
+
+  .banner .container {
+    width: 80%;
+  }
+
+  ul.filter li label {
     display: flex;
     flex-direction: column;
   }
+
+  .prev-4 {
+    display: none;
+  }
+
 }
 
-// @media screen and (max-width: 768px) {
-//   // 테블릿
-//   .static-door-line {
-//     display: block;
-//   }
-// }
+@media screen and (min-width: 877px) and (max-width: 1023px) {  //880~1023
+  .prev-4 {
+    display: none;
+  }
+  .prev-1 {
+    display: none;
+  }
 
-//   .door-line {
-//     display: none;
-//   }
+  .text {
+    font-size: 20px;
+  }  
 
-//   .logo-holder {
-//     width: 100%;
-//     padding: 1rem;
-//     img {
-//       width: 100%;
-//     }
-//   }
+  .Mediamain {
+    display: none;
+  }
+
+  .mediaMain {
+    display: block;
+    position: absolute;
+
+    left: 10%;
+    height: 105%;
+
+  }
+
+  .mediaMain img {
+    position: relative;
+    top: 5%;
+    left: 40px;
+    height: 780px;
+    width: 800px;
+  }
+
+  .topbar a {
+    color: whitesmoke
+  }
+
+ 
+  .b-container h4 {
+    display: none;
+  }
+
+}
+
+
+
+@media (min-width: 768px) and (max-width: 876px) {   // 768~879
+  .prev-4 {
+    display: none;
+  }
+  .prev-1 {
+    display: none;
+  }
+  .prev {
+    max-width: 70%;
+  }
+  .ul.filter {
+    word-wrap: break-word;
+  }
+
+  .text {
+    font-size: 18px;
+  }  
   
+  .b-container h2 {
+    color: whitesmoke;
+  }
 
-// @media screen and (max-width: 450px) {
-//   // 모바일
+  .b-container path {
+    color: whitesmoke;
+  }
 
-// }
+  .b-container h4 {
+    display: none;
+  }
 
-// @media screen and (max-width: 350px) {
+  .Mediamain {
+    display: none;
+  }
 
-// }
+  .mediaMain {
+    display: flex;
+    position: static;
+    top: 30%;
+  }
+  .logo, .topbar a {
+    color: whitesmoke
+  }
+}
+
+@media screen and (min-width: 451px) and (max-width: 767px) {  // 451~767
+
+  .text {
+    font-size: 14px;
+  }  
+
+  .b-container {
+    display: none;
+  }
+  
+  // .home {
+  //   display: flex;
+  //   position: relative;
+  // }
+  // .home i {
+  //   position: relative;
+  // }
+
+  .header-top {
+    text-align: center;
+  }
+  .topbar {
+    display: none;
+  }
+
+  .prev {
+    width: 70%;
+  }
+  .prev-4 {
+    display: none;
+  }
+  .prev-3 {
+    display: none;
+  }
+  .prev-1 {
+    display: none;
+  }
+
+  .Mediamain {
+    display: none;
+  }
+
+  .mediaMain {
+    display: flex;
+    position: static;
+    top: 30%;
+  }
+  .b-container h4 {
+    display: none;
+  }
+  .logo {
+    color: whitesmoke
+  }
+
+  
+}
+
+
+@media screen and (max-width: 450px) {  // ~450
+  // .container {
+  //   display: none;
+  // }
+  .Mediamain {
+    display: none;
+  }
+
+  .mediaMain {
+    display: flex;
+    position: static;
+    top: 30%;
+  }
+  .sidebar {
+    display: none;
+  }
+
+
+  .header-top {
+    text-align: center;
+  }
+  .topbar {
+    display: none;
+  }
+  .sidebar {
+    display: none;
+  }
+  .b-container {
+    display: none;
+  }
+  .prev {
+    display: none;
+  }
+  .b-container h4 {
+    display: none;
+  }
+  .logo {
+    color: whitesmoke;
+    // float: right;
+  }
+}
+
