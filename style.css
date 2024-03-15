@@ -623,9 +623,6 @@ ul.filter li input[type=checkbox]:focus + label {
     height: 780px;
     width: 800px;
   }
-  .topbar a {
-    color: whitesmoke;
-  }
   .b-container h4 {
     display: none;
   }
